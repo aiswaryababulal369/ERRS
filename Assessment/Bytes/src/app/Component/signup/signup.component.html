@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" placeholder="Full Name" formControlName="firstName"
+					[ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" >
+					<div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+						<div *ngIf="f['firstName'].errors['required']" class="bold-error">Full Name is required</div>
+					  </div>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" placeholder="User name / Email" formControlName="userName" >
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" class="login__input" placeholder="Password" formControlName="userPassword">
+				</div>
+				<button *ngIf="!isNewEmployee" class="button login__submit" type="submit" [disabled]="!loginForm.valid">
+					<span class="button__text">Signup</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>
+				
+				<button *ngIf="isNewEmployee" class="button login__submit" type="submit" [disabled]="!loginForm.valid">
+					<span class="button__text">Add New Employee</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+			</form>
+			<div class="social-login" *ngIf="!isNewEmployee">
+				<button routerLink="/login">Login</button>
+			</div>
+		</div>	
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
+
+
+  

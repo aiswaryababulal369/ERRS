@@ -1,0 +1,102 @@
+<div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+            <div class="formbold-form-title">
+                <h2>{{ isEditMode ? 'Edit Product' : 'Add New Product' }}</h2>
+                <p>{{ isEditMode ? 'Edit existing product details' : 'Add new product to Bytes Store' }}</p>
+            </div>
+
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="productName" class="formbold-form-label">Product Name</label>
+                    <input type="text" formControlName="productName"  class="formbold-form-input" />
+                </div>
+                <div>
+                    <label for="productDescription" class="formbold-form-label"> Product Description </label>
+                    <input type="textarea" formControlName="productDescription"  class="formbold-form-input" />
+                </div>
+            </div>
+
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="productCategory" class="formbold-form-label"> Product Category </label>
+                    <select formControlName="productCategory" class="formbold-form-input">
+                        <option *ngFor="let category of categories" [value]="category.categoryName">{{ category.categoryName }}</option>
+                      </select>
+                </div>
+                <div>
+                    <label for="manufacturer" class="formbold-form-label"> Manufacturer </label>
+                    <input type="text" formControlName="manufacturer"class="formbold-form-input" />
+                </div>
+            </div>
+
+            <div class="formbold-mb-3">
+                <label for="expiryDate" class="formbold-form-label"> Expiry Date </label>
+                <input type="date" formControlName="expiryDate" class="formbold-form-input" />
+            </div>
+
+            <!-- <div class="formbold-mb-3">
+                
+            </div> -->
+
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="quantityAvailable" class="formbold-form-label">Quantity Available</label>
+                    <input type="number" formControlName="quantityAvailable" class="formbold-form-input" />
+                </div>
+                <div>
+                    <label for="termsandConditions" class="formbold-form-label"> T & C </label>
+                    <input type="text" formControlName="termsandConditions" class="formbold-form-input" />
+                </div>
+            </div>
+
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="featuredStatus" class="formbold-form-label"> Featured Status </label>
+                    <select formControlName="featuredStatus" class="formbold-form-input">
+                        <option value="true">Premium</option>
+                        <option value="false">Normal</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="availabilityStatus" class="formbold-form-label">Availability Status</label>
+                    <select formControlName="availabilityStatus" class="formbold-form-input">
+                        <option value="true">Available</option>
+                        <option value="false">Not Available</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="formbold-input-flex">
+                <div>
+                    <label for="additionalMetadata" class="formbold-form-label"> Additional Metadata </label>
+                    <input type="text" formControlName="additionalMetadata" class="formbold-form-input" />
+                </div>
+                <div>
+                    <label for="pointsInBytes" class="formbold-form-label">Points In Bytes</label>
+                    <input type="number" formControlName="pointsInBytes" class="formbold-form-input" />
+                </div>
+            </div>
+
+            <div>
+                <h1>image</h1>
+                <input type="file" multiple="multiple" value="select" #selectFile (change)="onFileSelected($event)" accept=".jpg,.png,.jpeg" formControlName="productImage"/>
+                <div  *ngFor="let file of product.productImage"> 
+                    <div class= "imageArea">
+                        <img [src]="file.url" alt="" width="100px" height="100px">
+                    </div>
+                </div>
+                <div *ngIf="isEditMode"> 
+                    <div class= "imageArea">
+                        <img [src]="image" alt="" width="100px" height="100px">
+                    </div>
+                </div>
+            </div>
+
+            <button class="formbold-btn">{{ isEditMode ? 'Update Product' : 'Add Product' }}</button>
+
+            <button class="formbold-btn"> Clear</button>
+        </form>
+        
+    </div>
+</div>

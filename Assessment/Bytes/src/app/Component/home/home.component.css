@@ -1,0 +1,40 @@
+.mat-toolbar{
+  background-color:#4C489D;
+}
+
+.spacer {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.mat-grid-tile {
+  background: rgb(228, 234, 236);
+}
+
+.heading{
+  font-family: 'Rubik Maps', system-ui;
+  font-size: x-large;
+  color: #4b0ffe;
+  font-weight: 900;
+}
+
+.intro{
+  padding-top: 3%;
+  padding-left: auto;
+  height: 2rem;
+}
+
+
+
+.main{
+  height: 100%;
+  width: 100%;
+}
+
+.login{
+  height: 40rem;
+}
+
+
+
+

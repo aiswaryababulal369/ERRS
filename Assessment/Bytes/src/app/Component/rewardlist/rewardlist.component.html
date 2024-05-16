@@ -1,0 +1,53 @@
+<section class="example-container mat-elevation-z8" tabindex="0">
+    <table mat-table [dataSource]="rewardDetails">
+  
+      <ng-container matColumnDef="rewardId">
+        <th mat-header-cell *matHeaderCellDef> Reward Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.rewardId}} </td>
+      </ng-container>
+      <!-- Position Column -->
+      <ng-container matColumnDef="rewardName">
+        <th mat-header-cell *matHeaderCellDef> Reward Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.rewardName}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="rewardDescription">
+        <th mat-header-cell *matHeaderCellDef> Reward Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.rewardDescription}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="byteValue">
+        <th mat-header-cell *matHeaderCellDef> Byte Value </th>
+        <td mat-cell *matCellDef="let element"> {{element.byteValue}} </td>
+      </ng-container>
+
+     
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef> Update </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="updateBytes(element.rewardId)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="onDelete(element.rewardId)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      
+
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </section>
+  
+

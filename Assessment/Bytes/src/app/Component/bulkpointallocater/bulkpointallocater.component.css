@@ -1,0 +1,71 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: 16px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+button {
+  color: rgb(24, 27, 241);
+  text-transform: uppercase;
+  margin-left: 8px;
+}
+
+button.active {
+  font-weight: 600;
+}
+
+.custom-toolbar {
+  background-color: #ff0000;
+}
+
+.custom-dropdown-button {
+  font-size: 14px;
+  padding: 8px 12px;
+  min-width: 300px;
+  color: black;
+}
+
+.custom-panel {
+  width: 500px;
+}
+
+
+.mat-select{
+  min-width: 500px;
+}
+/* Container Styles */
+.container {
+  max-width: 800px;
+  min-width: 600px; /* Increased maximum width */
+  margin: 50px auto; /* Center the container on the page */
+  padding: 30px; /* Add more padding to the container */
+  border: 2px solid #2196f3; /* Border color */
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255); /* Background color */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box; /* Include padding and border in the total width and height */
+}
+
+.header {
+  margin-bottom: 30px;
+  text-align: center; /* Center the header text */
+}
+
+.mat-form-field.mat-form-field-outline {
+  border-color:rgba(0, 0, 0, 0.2)
+}
+
+.mat-mdc-form-field{
+  width:500px;
+  
+}

@@ -1,0 +1,35 @@
+
+ <div class="main">
+	<div class="container">
+	  <div class="row row-cols-3">
+		<div class="col-sm-4" *ngFor="let product of productDetails; let i = index">
+		  <div class="card-sl">
+			<div class="card-image">
+				<div *ngIf="product.featuredStatus" class="premium-banner" style="position: absolute;">
+					<i class="fas fa-star"></i> Premium
+				  </div>
+			  <img [src]="product.imageView" />
+			  
+			</div>
+			
+			<div class="card-heading">
+			  {{ product.productName }}
+			</div>
+			<div class="card-text">
+			  {{ product.productDescription }}
+			</div>
+			<div class="card-text">
+			 BytesPoint : {{ product.pointsInBytes }}
+			</div>
+			<div class="card-text">
+			Quantity :	{{ product.quantityAvailable }}
+			  </div>
+			  <a *ngIf="product.quantityAvailable > 0" class="card-button" (click)="buyProduct(product.productId)">Purchase</a>
+			  <span *ngIf="product.quantityAvailable === 0" class="out-of-stock">Out of Stock</span>
+			
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+  

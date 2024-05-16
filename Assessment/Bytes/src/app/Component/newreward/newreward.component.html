@@ -1,0 +1,39 @@
+<div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+
+        <!-- <img src="your-image-url-here.jpg"> -->
+
+        <form [formGroup]="rewardForm" (ngSubmit)="onSubmit()" >
+            <div class="formbold-form-title">
+                <h2 class="">Add New Reward...!</h2>
+                <p>
+                    Add new Reward to Bytes Store...!
+                </p>
+            </div>
+
+            
+
+            <div class="formbold-mb-3">
+                <label for="expiryDate" class="formbold-form-label"> Reward Name </label>
+                <input type="text" formControlName="rewardName" class="formbold-form-input" />
+            </div>
+
+            <div class="formbold-mb-3">
+                <label for="quantityAvailable" class="formbold-form-label">Reward Description</label>
+                <input type="text" formControlName="rewardDescription" class="formbold-form-input" />
+            </div>
+
+            <div class="formbold-mb-3">
+                <label for="quantityAvailable" class="formbold-form-label">Byte Value</label>
+                <input type="number" formControlName="byteValue" class="formbold-form-input" />
+            </div>
+            
+            
+
+            <button class="formbold-btn">Add Reward</button>
+
+            <button class="formbold-btn" (click)="clear()"> Clear</button>
+        </form>
+        
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="main">
+    <div class="card">
+        <h1>User Details</h1>
+        <p>User Name : {{userDetails.userName}}</p>
+        <p>Full Name : {{userDetails.firstName}}</p>
+
+        <ng-container *ngIf="transactionType === 'Debit'; else creditRewardSection">
+            <h1>Product Details</h1>
+            <p>Product Name: {{productDetails.productName}}</p>
+            <p>Product Description : {{productDetails.productDescription}}</p>
+        </ng-container>
+
+        <ng-template #creditRewardSection>
+            <h1>Reward Details</h1>
+            <p>Reward Name: {{rewardDetails.rewardName}}</p>
+            <p>Reward Description : {{rewardDetails.rewardDescription}}</p>
+        </ng-template>
+
+    </div>
+</div>
+

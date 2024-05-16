@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="header">
+		<h2>Allocate Points</h2>
+	</div>
+	<form [formGroup]="allocationForm" (ngSubmit)="addAllocation()">
+		<mat-form-field appearance="fill" class="form-field" >
+			<mat-label >Select Employee(s)</mat-label>
+			<mat-select formControlName="selectedEmployees"  multiple>
+				<mat-option *ngFor="let employee of userName" [value]="employee.userId">
+					{{ employee.userName }}
+				</mat-option>
+			</mat-select>
+			<mat-error *ngIf="allocationForm.get('selectedEmployees')?.hasError('required')">
+				Employee selection is required!
+			</mat-error>
+		</mat-form-field>
+<br>
+		<mat-form-field appearance="fill" class="form-field">
+			<mat-label>Reward Type</mat-label>
+			<mat-select formControlName="rewardType" color="primary">
+				<mat-option *ngFor="let reward of rewardName" [value]="reward.rewardId">
+					{{reward.rewardName }}
+				</mat-option>
+			</mat-select>
+			<mat-error *ngIf="allocationForm.get('rewardType')?.hasError('required')">
+				Reward type is required!
+			</mat-error>
+		</mat-form-field>
+
+		<br>
+
+		<button mat-raised-button color="primary" type="submit">
+			Allocate Points
+		</button>
+	</form>
+</div>

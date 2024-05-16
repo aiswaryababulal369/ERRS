@@ -1,0 +1,58 @@
+<main class="main">
+  <aside class="sidebar">
+    <nav class="nav">
+      <ul>
+        <li><a routerLink="/adminDashboard" routerLinkActive="active">Home</a></li>
+        <li class="nested-menu">
+          <a>Product</a>
+          <ul class="sub-menu">
+            <li><a routerLink="newProduct" routerLinkActive="active">Add New Product</a></li>
+            <li><a routerLink="productlist" routerLinkActive="active">Product List</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nested-menu">
+          <a>Reward</a>
+          <ul class="sub-menu">
+            <li><a routerLink="newreward" routerLinkActive="active">Add New Reward</a>
+            </li>
+            <li><a routerLink="rewardlist" routerLinkActive="active">Rewards List</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nested-menu">
+          <a>Category</a>
+          <ul class="sub-menu">
+            <li><a routerLink="newCategory" >Add New Category</a></li>
+            <li><a routerLink="categorylist"> Category List</a></li>
+          </ul>
+        </li>
+
+        <li class="nested-menu">
+          <a>Employee</a>
+          <ul class="sub-menu">
+            <li><a routerLink="signup" [queryParams]="{ isNewEmployee: true }">Add New Employee</a></li>
+            <li><a routerLink="employeelist">Employee List</a>
+        </li>
+          </ul>
+        </li>
+        <li><a routerLink="transactionhistory">Transactions</a></li>
+        <li><a routerLink="/userDashboard">User Mode</a></li>
+        <li><a routerLink="/login" (click)="signOut()">SignOut</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <section class="twitter">
+    <div class="container">
+
+      <div class="intro">
+        <p class="text-center heading">Employee Reward and Recognition System (ERRS) </p>
+      </div>
+
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</main>

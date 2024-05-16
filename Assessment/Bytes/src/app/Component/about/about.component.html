@@ -1,0 +1,21 @@
+<div class="main">
+<div class="card">
+    <h1> Product Details</h1>
+    <p>Name : {{productDetails.productName}}</p>
+    <p>Description : {{productDetails.productDescription}}</p>
+    <p>Category : {{productDetails.productCategory}}</p>
+    <p>Expiry Date : {{productDetails.expiryDate}}</p>
+    <p>manufacturer : {{productDetails.manufacturer}}</p>
+    <p>Quantity : {{productDetails.quantityAvailable}}</p>
+    <p>Availability Status : {{productDetails.availabilityStatus ? 'In Stock' : 'Out of Stock'}}</p>
+    <p>Featured Status : {{ productDetails.featuredStatus ? 'Premium' : 'Normal' }}</p>
+    <p>Additional Metadata : {{productDetails.additionalMetadata}}</p>
+    <p>Points In Bytes : {{productDetails.pointsInBytes}}</p>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>Close</button>
+    </div>
+  </div>
+
+ 
+  
+</div>

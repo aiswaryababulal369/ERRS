@@ -1,0 +1,37 @@
+<div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+
+
+        <form [formGroup]="bytesForm" (ngSubmit)="onSubmit()">
+            <div class="formbold-form-title">
+                <h2 class="">Bytes Allocater</h2>
+                <p>
+                    Add Bytes to the Deserved Employees...!
+                </p>
+            </div>
+
+
+
+            <!-- <div class="formbold-mb-3">
+                <label for="userName" class="formbold-form-label"> User Name</label>
+                <select formControlName="userName" class="formbold-form-input">
+                    <option *ngFor="let user of userName" [value]="user.userId">{{ user.userName }}</option>
+                </select>
+            </div> -->
+
+            <div class="formbold-mb-3">
+                <label for="rewardName" class="formbold-form-label">Reward Name</label>
+                <select formControlName="rewardName" class="formbold-form-input">
+                    <option *ngFor="let reward of rewardName" [value]="reward.rewardId">{{ reward.rewardName }}</option>
+                </select>
+            </div>
+
+
+
+            <button class="formbold-btn">Add Bytes</button>
+
+            <button class="formbold-btn" (click)="clear()">Clear   </button>
+        </form>
+
+    </div>
+</div>

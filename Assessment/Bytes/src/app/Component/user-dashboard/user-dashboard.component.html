@@ -1,0 +1,23 @@
+<main class="main">
+  <aside class="sidebar">
+    <nav class="nav">
+      <ul>
+        <li class="active"><a routerLink="/userDashboard" routerLinkActive="true">Home</a></li>
+        <li class="active" ><a routerLink="orders">Orders</a></li>
+        <li class="active"><a routerLink="userhome">Shop</a></li>
+        <li class="active"><a routerLink="/login" (click)="signOut()">Signout</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <section class="twitter">
+    <div class="container">
+
+      <div class="intro">
+        <p class="text-center heading">Employee Reward and Recognition System (ERRS) </p>
+      </div>
+
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</main>

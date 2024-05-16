@@ -1,0 +1,33 @@
+<div class="formbold-main-wrapper">
+    <div class="formbold-form-wrapper">
+
+        <!-- <img src="your-image-url-here.jpg"> -->
+
+        <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" >
+            <div class="formbold-form-title">
+                <h2 class="">Add New Category...!</h2>
+                <p>
+                    Add new Category to Bytes Store...!
+                </p>
+            </div>
+
+            
+
+            <div class="formbold-mb-3">
+                <label for="categoryName" class="formbold-form-label"> Category Name </label>
+                <input type="text" formControlName="categoryName" class="formbold-form-input" />
+            </div>
+
+            <div class="formbold-mb-3">
+                <label for="categoryDescription" class="formbold-form-label">Category Description</label>
+                <input type="text" formControlName="categoryDescription" class="formbold-form-input" />
+            </div>
+            
+            <button class="formbold-btn">Add Category</button>
+
+            <button class="formbold-btn" (click)="clear()"> Clear</button>
+        </form>
+        
+    </div>
+</div>
+

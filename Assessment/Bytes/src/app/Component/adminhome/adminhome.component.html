@@ -1,0 +1,20 @@
+<body>
+  <main>
+    <div id="header">
+      <h1>Ranking</h1>
+    </div>
+    <div id="leaderboard">
+      <div class="ribbon"></div>
+      <table *ngFor="let users of sortedUserDetails; let i = index; let first=first" >
+        <tr>
+          <td class="number">{{i+1}}</td>
+          <td class="name">{{users.firstName}}</td>
+          <td class="points">
+            {{users.totalBytes}}  <img *ngIf="first" class="gold-medal" src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true" alt="gold medal"/>
+          </td>
+        </tr>
+        
+      </table>
+    </div>
+  </main>
+</body>
